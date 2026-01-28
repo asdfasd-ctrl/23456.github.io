@@ -4,6 +4,18 @@ layout: archive
 
 {{ content }}
 
+<div class="home-featured-image">
+  <img src="{{ site.featured_image | default: '/assets/images/me.jpg' }}" 
+       alt="首页特色图片" 
+       class="home-image"
+       style="max-width: 100%; height: auto; border-radius: 8px; margin: 2rem 0;">
+  {% if page.image_caption %}
+    <p class="image-caption" style="text-align: center; font-style: italic; color: #666; margin-top: 0.5rem;">
+      {{ page.image_caption }}
+    </p>
+  {% endif %}
+</div>
+
 <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
 
 {% if paginator %}
